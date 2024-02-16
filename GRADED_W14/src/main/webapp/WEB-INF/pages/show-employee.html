@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Employee Details</title>
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #007bff;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+	<a href="add-employee-con">Add Record</a>
+	<br><br>
+	<table border="2">
+
+		<tr>
+			<th>Employee Name</th>
+			<th>Employee Address</th>
+			<th>Employee Phone</th>
+			<th>Salary</th>
+			<th>Action 1</th>
+			<th>Action 2</th>
+		</tr>
+
+		<tr th:each="temp: ${employees}">
+			<td th:text="${temp.employeeName}"></td>
+			<td th:text="${temp.employeeAddress}"></td>
+			<td th:text="${temp.employeePhone}"></td>
+			<td th:text="${temp.employeeSalary}"></td>
+			<td><a th:href="@{update-employee-con(id=${temp.id})}">Update</a></td>
+			<td><a th:href="@{delete-employee-con(id=${temp.id})}">Delete</a></td>
+		</tr>
+
+	</table>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Add Employee</title>
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            min-width: 120px;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 12px);
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        button[type="submit"], button[type="reset"] {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+	<form action="added-employee-con" method="post">
+		
+		<table>
+			<tr>
+				<th>Employee Name</th>
+				<td><input type="text" name="name" required/></td>
+			</tr>
+			<tr>
+				<th>Employee Address</th>
+				<td><input type="text" name="address" required/></td>
+			</tr>
+			<tr>
+				<th>Employee Phone</th>
+				<td><input type="text" name="phone" required/></td>
+			</tr>
+			<tr>
+				<th>Employee Salary</th>
+				<td><input type="text" name="salary" required/></td>
+			</tr>
+			<tr>
+				<td><button type="submit">Save...</button></td>
+				<td><button type="reset">ReSet...</button></td>
+			</tr>
+		</table>
+
+	</form>
+</body>
+
+</html>
